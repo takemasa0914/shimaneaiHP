@@ -34,3 +34,28 @@
 @media(max-width:700px){.hero h1{font-size:clamp(1.65rem,6.95vw,3.3rem);line-height:1.65}.hero h1>.hero-line{font-size:inherit}.photo-statement{font-size:clamp(1.15rem,4.4vw,1.65rem);left:23px;bottom:59px;letter-spacing:0}.photo-statement>span{font-size:.75rem;letter-spacing:.06em}.hero-visual{aspect-ratio:1.17}.vision-section{padding:64px 0 54px}.vision-wordmark{top:15px;font-size:4.5rem;left:-20%}.vision-inner>.eyebrow{font-size:.75rem;line-height:1.8;letter-spacing:.07em;margin-bottom:22px}.vision-inner h2{font-size:clamp(1.65rem,5.9vw,2.7rem);line-height:1.8;letter-spacing:-.03em}.vision-description{margin-top:21px;font-size:1rem;line-height:2}.vision-description br{display:none}.vision-pillars{grid-template-columns:1fr;margin-top:33px;padding-top:0;gap:0}.vision-pillars article{padding:25px 0}.vision-pillars article+article{border-left:0;border-top:1px solid #4d7460;padding-left:0}.vision-pillars article:last-child{padding-bottom:0}.vision-pillars h3{font-size:1.25rem;margin:10px 0}.vision-pillars p{font-size:1rem}.member-list{grid-template-columns:1fr;gap:0}.member-list h3{font-size:1.5rem}.consultation-grid{grid-template-columns:1fr;gap:34px}.consultation-copy h2{font-size:clamp(1.9rem,6.3vw,2.5rem);margin-top:20px}.consultation-copy>p:not(.eyebrow){margin-top:21px}.consultation-panel{padding:28px 23px}.consultation-panel h3{font-size:1.15rem}.consultation-topics li{font-size:1rem}.consultation-button{padding:17px 20px}.consultation-note{font-size:.875rem}.header-cta{display:flex!important;margin-left:auto;padding:10px 15px;font-size:.875rem}.menu-toggle{margin-left:0}.header-inner{gap:12px}.brand{font-size:1.7rem}.reading-progress{height:2px}.reveal-pending{transform:translateY(22px)}}
 @media(max-width:350px){.header-inner{gap:9px}.header-cta{padding:9px 10px;gap:8px}.brand{font-size:1.5rem}.menu-toggle{width:36px;height:36px;padding:9px}}
 @media(prefers-reduced-motion:reduce){.motion-ready .hero-line>span,.motion-ready .hero-intro,.motion-ready .hero-visual{animation:none!important}.reveal-pending{opacity:1!important;transform:none!important}.hero-visual>img{transform:none!important}.vision-wordmark{transform:none!important}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Rediscover Shimane: business possibilities and a photographic cultural story. */
+.hero h1{font-size:clamp(2.6rem,5.7vw,5.5rem)}
+.possibility-note{font-size:.875rem;color:var(--muted);margin-bottom:22px}
+.industry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.industry-card{border-top:3px solid var(--green);padding:28px 0 12px}
+.industry-card .eyebrow{color:var(--green)}.industry-card h3{font-size:1.6rem;margin:12px 0 15px}
+.industry-aim{font-size:1rem;font-weight:600;line-height:1.9;margin-bottom:20px}
+.industry-card ul{display:grid;gap:12px;color:var(--muted);font-size:1rem;line-height:1.9}
+.industry-card li{position:relative;padding-left:16px}.industry-card li::before{content:'・';position:absolute;left:0;color:var(--green)}
+.business-next{display:flex;align-items:center;justify-content:space-between;gap:30px;background:var(--soft);padding:29px 32px;margin-top:38px}.business-next p{font-size:1rem}.business-next .text-link{flex-shrink:0}
+.heritage-section{background:#eff4f1}.heritage-intro{max-width:780px;font-size:1rem;line-height:2.1;margin-bottom:44px;color:#405a53}
+.heritage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 30px}
+.heritage-card{min-width:0}.heritage-photo{overflow:hidden;aspect-ratio:16/10;background:#d7e3dc}
+.heritage-photo img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.heritage-caption{padding:23px 0 0}.heritage-caption .eyebrow{color:var(--green)}
+.heritage-caption h3{font-size:1.75rem;line-height:1.65;margin:6px 0 12px}
+.heritage-caption>p:not(.eyebrow){font-size:1rem;line-height:2;color:#405a53;max-width:540px}
+.heritage-credit{font-size:.75rem;color:var(--muted);margin-top:15px;line-height:1.8;overflow-wrap:anywhere}.heritage-credit a{text-decoration:underline;text-underline-offset:3px}
+.heritage-note{font-size:.875rem;line-height:1.9;color:var(--muted);border-top:1px solid #c7d9cd;margin-top:38px;padding-top:22px}
+.team-story{display:grid;grid-template-columns:1fr 1fr;gap:40px;color:#405a53;font-size:1rem;line-height:2.1}
+@media(hover:hover) and (pointer:fine){.heritage-card:hover .heritage-photo img{transform:scale(1.035)}}
+@media(max-width:980px){.industry-grid{gap:22px}.industry-card h3{font-size:1.35rem}.business-next{align-items:flex-start;flex-direction:column;gap:18px}.heritage-grid{gap:36px 24px}.team-story{gap:26px}}
+@media(max-width:700px){.hero h1{font-size:clamp(2.4rem,9.8vw,4rem)}.industry-grid,.heritage-grid,.team-story{grid-template-columns:1fr}.industry-grid{gap:22px}.industry-card h3{font-size:1.6rem}.industry-card{padding-top:24px}.business-next{padding:25px 23px}.business-next br{display:none}.heritage-intro{margin-bottom:30px}.heritage-grid{gap:37px}.heritage-caption{padding-top:19px}.heritage-caption h3{font-size:1.5rem}.heritage-note{margin-top:29px}.team-story{gap:20px}}
+@media(prefers-reduced-motion:reduce){.heritage-photo img{transition:none!important;transform:none!important}}

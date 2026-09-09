@@ -87,7 +87,7 @@ function setupMotion() {
       }
     });
   }, { threshold: .08, rootMargin: "0px 0px -24px 0px" });
-  const targets = document.querySelectorAll(".section-label,.about-grid h2,.about-copy,.network,.section-heading,.service-card,.project-row,.group-cases,.vision-inner>.eyebrow,.vision-inner h2,.vision-description,.vision-pillars article,.hackathon-heading,.hackathon-copy,.hackathon-poster,.event-facts,.member-list>li,.consultation-copy,.consultation-panel,.company-grid");
+  const targets = document.querySelectorAll(".section-label,.about-grid h2,.about-copy,.network,.section-heading,.service-card,.project-row,.group-cases,.vision-inner>.eyebrow,.vision-inner h2,.vision-description,.vision-pillars article,.hackathon-heading,.hackathon-copy,.hackathon-poster,.event-facts,.member-list>li,.consultation-copy,.consultation-panel,.company-grid,.industry-card,.business-next,.heritage-intro,.heritage-card,.team-story");
   targets.forEach(node => {
     if (node.matches(".service-card,.member-list>li,.vision-pillars article")) {
       const index = Array.prototype.indexOf.call(node.parentElement.children, node);
