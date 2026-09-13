@@ -1,5 +1,0 @@
-.git
-.openai
-*.tar.gz
-node_modules
-.env*

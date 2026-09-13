@@ -1,0 +1,13 @@
+import { z } from "zod";
+export const areas=["観光","教育","福祉","農業・林業","交通","地域文化","企業の業務改善","その他"] as const;
+export const partnerInterests=["成果発表・交流への参加","課題の提供","協賛・支援","メンター・技術協力","今後のAI活用・地域連携","まずは話を聞きたい"] as const;
+export const schoolTypes=["大学・大学院","高校","高等専門学校","専門学校","その他の学校"] as const;
+export const experiences=["はじめて・ほぼ未経験","AIを少し使ったことがある","AIを日常的に使っている","プログラミング・開発経験がある"] as const;
+const required=(label:string,max=120)=>z.string().trim().min(1,`${label}を入力してください。`).max(max,`${label}は${max}文字以内で入力してください。`);
+const consent=z.literal(true,{errorMap:()=>({message:"個人情報の取り扱いへの同意が必要です。"})});
+const base={name:required("お名前",80),email:z.string().trim().email("メールアドレスの形式をご確認ください。").max(254).transform(v=>v.toLowerCase()),message:z.string().trim().max(2000,"2,000文字以内で入力してください。"),consent,updatesOptIn:z.boolean(),areas:z.array(z.enum(areas)).max(areas.length)};
+export const studentSchema=z.object({...base,kind:z.literal("student"),school:required("学校名"),schoolType:z.enum(schoolTypes,{errorMap:()=>({message:"学校区分を選んでください。"})}),grade:required("学年",30),experience:z.enum(experiences,{errorMap:()=>({message:"AI・開発の経験を選んでください。"})}),ageGroup:z.enum(["adult","minor"],{errorMap:()=>({message:"年齢区分を選んでください。"})}),guardianConsent:z.boolean()}).superRefine((v,ctx)=>{if(v.ageGroup==="minor"&&!v.guardianConsent)ctx.addIssue({code:z.ZodIssueCode.custom,path:["guardianConsent"],message:"18歳未満の方は保護者の同意を得てお申し込みください。"})});
+export const businessSchema=z.object({...base,kind:z.literal("business"),organization:required("企業・団体名"),department:z.string().trim().max(100),location:required("所在地",100),participation:z.enum(["attend","interest"],{errorMap:()=>({message:"参加・登録の希望を選んでください。"})}),interests:z.array(z.enum(partnerInterests)).min(1,"関心のある関わり方を1つ以上選んでください。").max(partnerInterests.length)});
+export const registrationSchema=z.union([studentSchema,businessSchema]);
+export const envelopeSchema=z.object({requestId:z.string().uuid(),website:z.string().max(300).optional().default(""),startedAt:z.number().finite(),data:registrationSchema});
+export const PRIVACY_VERSION="2026-09-13-v1";

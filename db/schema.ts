@@ -1,0 +1,8 @@
+import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core";
+export const studentApplications=sqliteTable("student_applications",{
+ requestId:text("request_id").primaryKey(),receipt:text("receipt").notNull(),createdAt:text("created_at").notNull(),name:text("name").notNull(),email:text("email").notNull(),school:text("school").notNull(),schoolType:text("school_type").notNull(),grade:text("grade").notNull(),experience:text("experience").notNull(),ageGroup:text("age_group").notNull(),guardianConsent:integer("guardian_consent").notNull(),areas:text("areas").notNull(),message:text("message").notNull(),consentVersion:text("consent_version").notNull(),updatesOptIn:integer("updates_opt_in").notNull(),status:text("status").notNull().default("received")
+});
+export const businessRegistrations=sqliteTable("business_registrations",{
+ requestId:text("request_id").primaryKey(),receipt:text("receipt").notNull(),createdAt:text("created_at").notNull(),organization:text("organization").notNull(),name:text("name").notNull(),email:text("email").notNull(),department:text("department").notNull(),location:text("location").notNull(),participation:text("participation").notNull(),interests:text("interests").notNull(),areas:text("areas").notNull(),message:text("message").notNull(),consentVersion:text("consent_version").notNull(),updatesOptIn:integer("updates_opt_in").notNull(),status:text("status").notNull().default("received")
+});
+export const submissionLimits=sqliteTable("submission_limits",{key:text("key").primaryKey(),count:integer("count").notNull(),expiresAt:integer("expires_at").notNull()},t=>[index("idx_submission_limits_expiry").on(t.expiresAt)]);
