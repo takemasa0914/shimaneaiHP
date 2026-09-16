@@ -130,8 +130,8 @@ if (typeof contactConfig.formUrl === "string" && contactConfig.formUrl) {
   } catch { /* Keep the clear preparation notice for invalid configuration. */ }
 }
 if (!consultationUrl && typeof contactConfig.email === "string" && /^[^\s@\r\n]+@[^\s@\r\n]+\.[^\s@\r\n]+$/.test(contactConfig.email)) {
-  const subject = encodeURIComponent("【ShimaneAI】無料相談の申し込み");
-  const body = encodeURIComponent("お名前：\n会社・団体名：\n返信先のメールアドレス：\n\nご相談内容：\n\nご希望の連絡方法・日時：\n");
+  const subject = encodeURIComponent("【ShimaneAI】AI活用・共創の相談");
+  const body = encodeURIComponent("お名前：\n会社・団体名（任意）：\n返信先のメールアドレス：\nご相談区分（企業のAI活用／行政・教育連携／ハッカソン／個人参加／その他）：\n\nご相談内容：\n\nご希望の連絡方法・日時（任意）：\n");
   consultationUrl = `mailto:${encodeURIComponent(contactConfig.email)}?subject=${subject}&body=${body}`;
   consultationHelp = "メールアプリが開きます。内容を記入し、ご確認のうえ送信してください。";
 }
